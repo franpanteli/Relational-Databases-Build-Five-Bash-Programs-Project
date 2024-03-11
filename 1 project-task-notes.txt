@@ -1,3 +1,22 @@
 These are my notes on the project task page. This project is called "Learn Bash Scripting by Building Five Programs." The URL for the page which these notes are on is https://www.freecodecamp.org/learn/relational-database/learn-bash-scripting-by-building-five-programs/build-five-programs 
 
-- EDIT THIS
+This guided project:
+	-> This guided project is made up of 220 lessons 
+	-> The course is on using terminal commands within Bash scripts
+	-> We are creating 5 programs using Bash scripts 
+	-> It's called the Build Five Programs course 
+	-> We are creating 5 Bash scripts and writing programs with them 
+	-> We are doing this in the Gitpod VM -> and you need to have both tabs running when you complete this (one with freeCodeCamp and the other with Gitpod), or the progress won't be saved
+
+To run the project:
+	-> This runs in a virtual linux machine using Gitpod 
+	-> Create a GitHub account 
+	-> Then click on the "start the course" link on the page with the project brief 
+	-> This project is ran with Code Road (`CodeRoad: Start` in the command palette)
+	-> You have to be logged into the freeCodeCamp site while doing this project, or your progress won't be saved 
+
+-> You have to complete the entire project in the VM in one go -> while logged into the freeCodeCamp website 
+-> If you get rid of the tab with the VM and restart it, then the progress will be lost
+-> You also have to be logged into the freeCodeCamp website in the other tab, or when you complete the guided project the progress you've made won't be saved in the other tab 
+ 
+
