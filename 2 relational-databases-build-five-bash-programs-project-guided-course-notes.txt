@@ -13,6 +13,7 @@ TO CREATE A SCRIPTING FILE:
 	-> Then you run that in the terminal with sh file_name.sh
 		-> You can also use bash file_name.sh
 	-> ./questionnaire.sh <- This is an example of how to run one of these files 
+	-> ls / <- To print the names of the files in the current directory, and their directories at the highest level of the file system 
 
 TELLING THE COMPUTER WHICH INTERPRETER TO USE:
 		-> These are different interpreters 
@@ -196,6 +197,25 @@ TO ENTER MULTIPLE BOOLEAN EXPRESSIONS ON THE SAME LINE IN THE TERMINAL:
 		-> And then we are getting the terminal to print out the exit status of this -> which in this case is the value of the resulting boolean 
 		-> 0 being True and 1 being False 
 
+FOR LOOPS:
+if [[ $1 -gt 0 ]]
+then
+        for (( i = $1; i>0; i--))
+                do echo $i
+        done 
+
+else
+         echo Include a positive integer as the first argument.
+fi
+
+	-> This is an example of this 
+	-> This is the Bash equivalent of for I in <- It's taking the argument which is passed into the program when it's run and taking away 1, printing out that value, and then carry on going until it reaches 0
+	-> To run this, you can ./countdown.sh 10 <- This passes 10 as the argument into the program and runs it   
+
+TO PAUSE THE EXECUTION OF A FILE:
+	-> One example of this is sleep 3 <- To pause the execution of a command
+	-> You can also look up the documentation for commands using (for instance man sleep)
+	-> For example, when we are executing a for loop -> you can make the code stop for 1 second before moving onto the next iteration of the loop
 
 
 
