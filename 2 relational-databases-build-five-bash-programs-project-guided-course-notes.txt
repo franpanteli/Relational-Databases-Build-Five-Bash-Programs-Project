@@ -1,3 +1,7 @@
+From the first project, `questionnaire.sh`
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 echo hello bash <- to repeat a message back in the terminal 
 
 TO CREATE A SCRIPTING FILE:
@@ -52,30 +56,145 @@ HELP:
 	-> echo --help <- To see help on the `echo` command 
 	-> man echo <- To access the manual for a command 
 	-> Control C <- To exit out of the program when it is running in the terminal and you don't want to carry on with it 
+	-> If you want help for a command, try `man` and `help`
+		-> Some of the commands don't have sections in `man` or `help`
+	-> Or help name-of-command
+	-> Another example of this is `help [[ expression ]]`
+		-> That if there is a piece of code you don't understand, you can just help .... <- with the general syntax of that code 
+	-> help [[ <- To see the help menu for the command that (in this example) was previously used (expression)
+	-> If you just enter help, then it will query more general parameters -> or the ones which were previously used 
 
-FUNCTIONS:
+From the second project, `countdown.sh`
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+The process:
+	-> Create a new .sh file using touch 
+	-> Change the file permissions on this using chmod +x filename.sh
+	-> This gives you execute permission -> so you can run the file 
+	-> Otherwise when you run the command, it will return an error 
+	-> Then you edit the file using nano and add a shebang on the top line 
+		-> This is telling the terminal which interpreter to use when executing the file 
 
+COMMENTS:
+	-> # Comments in Bash look like comments in Python  
 
+TO PRINT OUT THE VALUES OF VARIABLES IN BASH PROGRAMS:
+	-> By 'Bash program' <- This means a series of Bash commands in a project .sh file 
+	-> You can add arguments to these programs
+		-> The values of these can be accessed with $...
+	-> echo $* <- This prints out the values of all of the arguments passed into that script 
+		-> This is different to the variables 
+	-> echo $1 <- To print the first argument which was passed into the script, into the terminal 
+		-> You replace 1 with the index of the argument whose value you want to return
+		-> This is if you want to print the value of one of the arguments (rather than all of them)
+		-> You add this to the project .sh file -> and then when its ran the value of the first argument passed into the program is echoed back out into the terminal  
 
+IF STATEMENTS:
 
+	if [[ CONDITION ]]
+	then
+ 	 STATEMENTS
+	fi
 
+	-> (Above) this is an example of an if statement being used in Bash 
+	-> An example of a condition is if [[ $1 == arg1 ]]
+	-> Another example of this (below):
+	
+	if [[ $1 == arg1 ]]
+	then
+	  echo true
+	fi
 
+	-> This will return true if arg1 is passed into the script 
+	-> To do this, it's ./countdown.sh arg1 <- this is running the script called countdown.sh, with arg1 passed in as an argument 
+		-> Running it again without this as an argument will return nothing 
 
+ELSE STATEMENTS:
 
+	if [[ CONDITION ]]
+	then
+	  STATEMENTS
+	else
+	  STATEMENTS
+	fi
 
+	-> You don't have to add in the else statement 
+	-> In the case that the if condition isn't met, you can return an else statement which echoes this 
+	-> You can, for example - modify a program to check if an argument is positive (>0), and then print (`echo`) an error message to the terminal if this is the case 
 
+TO PASS ARGUMENTS INTO A PROGRAM:
+	-> ./program-name.sh !arg1
+	-> ! <- Any argument apart from this one 
+	-> arg1 <- The first argument passed into the program 
+	-> Instead of (for example) typing !arg1, you type arg2
+	-> You are going script-name.sh 4 <- this in the terminal, for example 
+		-> To run the script, with the first argument passed into it equal to 4
+		-> You can also deliberately test the script with arguments that you know will fail the conditions, to test them 
 
+BOOLEAN STATEMENTS FOR SINGLE CONDITIONS:
+	-eq <- Equal
+	-ne <- Not equal
+	-lt <- Less than
+	-le <- Less than or equal
+	-gt <- Greater than
+	-ge <- Greater than or equal
+	-> For example, $1 -lt 5 <- if the first argument is less than 5 
 
+BOOLEAN STATMEENTS FOR MULTIPLE CONDITIONS:
+	! <- Is not 
+	&& <- This condition and this condition is True 
+	|| <- This condition or this condition (you don't use 'or', you use pipes)
+	== <- This statement and this statement are both true
+	!= <- Is not equal 
+	-> You can enter an entire boolean statement into the terminal (e.g [[ 4 -le 5 ]]) <- The terminal is similar to a calculator 
+		-> You can just enter boolean statements into it
+		-> The answer to this doesn't enter in the terminal <- you just enter the expression, and no results are printed
+		-> The results of this boolean expression can be retrieved from echo $?
+		-> The result of this is 0 (True)
+		-> 1 is False and 0 is True 
+		-> This is called the exit status -> and it means that the program had zero errors (rather than that the output is automatically true)
 
+TO ENTER MULTIPLE STATEMENTS ON THE SAME LINE:
+	-> To enter multiple statements on the same line, you can separate them with ; 
+	-> For example [[ 4 -ge 5 ]]; echo $? <- Is 4 >= to 5, and return the value of the boolean which this produces 
+		-> If you didn't return the value of the boolean which that produced, it would be stored in the system memory and could still be accessed with that command 
+		-> It's called the exit status 
 
+TO CHECK THE EXIT STATUS OF A COMMAND:
+	bad_command; echo $? <- For example, run the command called bad_command (which doesn't exist) and print out its exit statement 
+		-> In other words, its value -> which is a 127 error message because the command we ran didn't exist
+		-> The exit status is its error message
+		-> 0 would mean True (no errors for a boolean statement)
+		-> 1 would mean False (errors for a boolean statement) 
+		-> Anything apart from 0 is an error message, or that there was some sort of error with the command 
+		-> Another example is ls; echo $? <- which returns 0, because it's not a fake command and it's also not a boolean statement with a value of False (there were no errors when dealing with this command)
 
-It looks good. I think you are done with that script for now. The next program will be countdown timer. Use the touch command to create a new file named countdown.sh in your project folder.
+TO CHECK IF A FILE EXISTS:
+	-> [[ -a countdown.sh ]]; echo $? 
+		-> We are running two statements in one line 
+		-> The first line checks if the file with the name countdown.sh exists
+		-> And we are also checking the exit statement of this command
+		-> We are seeing if this file exists 
 
+TO CHECK IF YOU HAVE EXECUTE PERMISSION FOR A FILE:
+	-> [[ -x countdown.sh ]]; echo $?
+		-> This is another example 
+		-> x means we have execute permissions for the file 
+		-> We are using the ; <- which means, check is we have execute permissions for this file, and run this other line of code at the same time 
+		-> The other line of code prints out the exit statement (similar to an error message) of the statement 
+		-> So we are saying, check if we have permission to execute this file, and print out the value of the 'boolean' / error message which stores this 
+		-> In this example, this returns 0 -> which means that we have execute permissions for the file 
+		-> We can run the file without it returning an error message
+		-> This is an example of how to implements two conditions on the same line of code 
 
-
-
-
+TO ENTER MULTIPLE BOOLEAN EXPRESSIONS ON THE SAME LINE IN THE TERMINAL:
+	-> [[ -x countdown.sh && 5 -le 4 ]]; echo $?
+		-> We are combining two boolean statements	
+			-> Do we have permission to execute this file 
+			-> Is 5 less than or equal to four 
+		-> And then we are getting the terminal to print out the exit status of this -> which in this case is the value of the resulting boolean 
+		-> 0 being True and 1 being False 
 
 
 
