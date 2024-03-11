@@ -19,4 +19,5 @@ To run the project:
 -> If you get rid of the tab with the VM and restart it, then the progress will be lost
 -> You also have to be logged into the freeCodeCamp website in the other tab, or when you complete the guided project the progress you've made won't be saved in the other tab 
 -> We are creating 5 programs using Bash scripting, and then submitting the completed project
- 
+-> The format of the previous course was a 'create the database and submit the link to the GitHub repository' course
+	-> This course is a different format, which is - complete the lessons in Gitpod, make notes and when you are done the progress will be saved to the account 
