@@ -9,14 +9,14 @@ This guided project:
 	-> We are doing this in the Gitpod VM -> and you need to have both tabs running when you complete this (one with freeCodeCamp and the other with Gitpod), or the progress won't be saved
 
 To run the project:
-	-> This runs in a virtual linux machine using Gitpod 
+	-> This runs in a virtual Linux machine using Gitpod 
 	-> Create a GitHub account 
 	-> Then click on the "start the course" link on the page with the project brief 
-	-> This project is ran with Code Road (`CodeRoad: Start` in the command palette)
+	-> This project is run with Code Road (`CodeRoad: Start` in the command palette)
 	-> You have to be logged into the freeCodeCamp site while doing this project, or your progress won't be saved 
 
 -> You have to complete the entire project in the VM in one go -> while logged into the freeCodeCamp website 
 -> If you get rid of the tab with the VM and restart it, then the progress will be lost
 -> You also have to be logged into the freeCodeCamp website in the other tab, or when you complete the guided project the progress you've made won't be saved in the other tab 
+-> We are creating 5 programs using Bash scripting, and then submitting the completed project
  
-
