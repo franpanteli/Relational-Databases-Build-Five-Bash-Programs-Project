@@ -1,3 +1,108 @@
-This file explains my solution to the project task, in the project EDIT file.
+echo hello bash <- to repeat a message back in the terminal 
 
-- 
+TO CREATE A SCRIPTING FILE:
+	-> touch file_name.sh
+	-> Then you can edit the file with commands you want to run in the terminal 
+	-> This is as opposed to writing a single Bash command in the terminal <- you write one file with many of them and then run that single file 
+		-> When there are many commands in the .sh file, then they will be executed by the terminal in the order which they are listed (from top to bottom)
+	-> Then you edit the script file and add the Bash commands into it 
+	-> Then you run that in the terminal with sh file_name.sh
+		-> You can also use bash file_name.sh
+	-> ./questionnaire.sh <- This is an example of how to run one of these files 
+
+TELLING THE COMPUTER WHICH INTERPRETER TO USE:
+		-> These are different interpreters 
+		-> which bash <- to see the absolute path of the interpreter 
+		-> #!<path_to_interpreter> <- add this to the top of the .sh file, so it knows to use the Bash interpreter 
+			-> This is a shebang
+			-> You get the path_to_interpreter from `which bash` in the terminal 
+			-> And then you add this line to the top of the .sh file 
+			-> You may need to get rid of 'usr' -> for example '#!/bin/bash', rather than '#!usr/bin/bash'
+
+PERMISSIONS:
+	-> To add file permissions 
+	-> If you try and run a script and you don't have the file permissions, you will get a 'permission denied' message in the terminal 
+	-> ls -l <- to view the file permissions 
+		-> This prints out the contents of the current folder and the file permissions for those files 
+		-> -rw-r--r-- <- for example, r- read, w- write, x- execute  
+	-> To change the file permissions 
+		-> chmod +x questionnaire.sh <- To add an 'x' to the file permissions
+		-> This allows the users to execute the file 
+		-> So now running the file won't return the same permission denied error message 
+		-> If you get these error messages, it might be the permissions which you need to change 
+	-> Once you have changed the file permissions, you can enter `ls -l` again to check that they have changed 
+	-> -rwxr-xr-x <- There are three different types of user, each of these represents the file permission that they have 
+
+TO PRINT THE VALUE OF A VARIABLE:
+	-> VARIABLE_NAME=VALUE
+	-> For example QUESTION1="What's your name?"
+	-> echo $QUESTION1 <- To print (echo) the value ($) of the variable called `QUESTION1`
+	-> Then when you run the file in the terminal, the value of this variable will be returned 
+
+TO ADD IN NEW LINES:
+	-> echo -e "\n~~ Questionnaire ~~\n" <- To add new lines around a statement which is printed out (echoed) into the terminal 
+	-> echo -e "\nHello $NAME from $LOCATION. I learned that your favorite coding website is $WEBSITE!" <- This is another approach used to add new lines 
+		-> The statement being printed out here includes the values of variables 
+
+TO TAKE INPUT INTO A VARIABLE:
+	-> read VARIABLE_NAME <- Put this into the shell file and then when it is run the terminal will ask the user for input 
+		-> The variable will store what the user enters 
+
+HELP:
+	-> echo --help <- To see help on the `echo` command 
+	-> man echo <- To access the manual for a command 
+	-> Control C <- To exit out of the program when it is running in the terminal and you don't want to carry on with it 
+
+FUNCTIONS:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+It looks good. I think you are done with that script for now. The next program will be countdown timer. Use the touch command to create a new file named countdown.sh in your project folder.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stop expecting men to pay
+
+Narcissistically abusive women expect men to give up work they love
+
+I am a director of software engineering and have degrees in mathematics and Physics, artificial intelligence, quantum computing and computer science. I am a proud queer woman and a champion for LGBT people in leadership.
+
+ member of the board of directors for lesbians who tech & allies UK.
+
+
+
+ I am also the author of Stop Expecting Men To Pay.
+
+
+Come back in a few years for the book ;)
+
+ and am known for my 'angry' leadership style.
