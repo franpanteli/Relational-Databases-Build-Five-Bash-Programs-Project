@@ -11,4 +11,6 @@ More information about each of these projects is found in the [Bash notes I crea
 
 
 
-```git clone https://github.com/franpanteli/Relational-Databases-Build-Five-Bash-Programs-Project.git```
+```
+git clone https://github.com/franpanteli/Relational-Databases-Build-Five-Bash-Programs-Project.git
+```
