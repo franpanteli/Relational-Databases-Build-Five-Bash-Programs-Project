@@ -1,5 +1,5 @@
 # Relational-Databases-Build-Five-Bash-Programs-Project
-## Relational Databases 
+## Relational Databases Independent Learning
 I independently completed [the fourth project](https://www.freecodecamp.org/learn/relational-database/learn-bash-scripting-by-building-five-programs/build-five-programs) in freeCodeCamp's [Relational Databases course](https://www.freecodecamp.org/learn/relational-database/), to improve my shell scripting skills with Bash. This curriculum consisted of 14 guided projects, to be completed in a Gitpod environment. My notes outlining the names (et al) of these 14 guided projects as part of this course are [here](https://github.com/franpanteli/Relational-Databases-Build-Five-Bash-Programs-Project/blob/main/0%20relational-databases-course-overview.txt). This repository is for the fourth of these projects I completed as part of this course, for my independent learning. 
 
 ## Programming With Bash 
