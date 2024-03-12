@@ -480,3 +480,40 @@ ADDING A NEW LINE AROUND THE RESPONSE FROM A PROGRAM:
 	-> This is the last line in the shell script (as of yet)
 	-> We are printing out the value of the Nth random element in the RESPONSES array 
 	-> This is done on a new line, with \n
+
+From the fifth project, `five.sh`
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+-> This project follows the same initialisation process as the previous four projects 
+	-> touch filename.sh <- Create the program .sh file 
+	-> chmod +x five.sh <- Give the user (?) executable file permissions - so we can run the .sh file 
+	-> Add a shebang line to the top of that .sh file, to tell the interpreter the code inside it is a Bash script 
+		-> #!/bin/bash <- Everything after #! is the relative path to the file 
+		-> This is the first line which we add to the .sh file (at the top)
+	-> As with the previous projects, there is a comment after the shebang line which tells the person viewing the file what it contains 
+
+-> clear <- to empty the terminal (not in the project .sh file)
+
+USING A PROGRAM TO RUN OTHER PROGRAMS:
+	-> We have four .sh files so far
+	-> These can be run in the terminal (in this project) by typing ./file_name.sh 
+	-> We are taking all of these four commands -> which run teach of these programs (.sh files) separately and putting them into another .sh file 
+	-> The terminal takes Bash commands
+	-> One .sh file contains many of these commands
+	-> So by taking the command which runs a .sh file, doing that for all four .sh files and then putting them into another .sh file -> we are defining a .sh file which runs all of the other four programs one after another 
+	-> There is no new content -> it's a program to run all of the other four ones after each other
+	-> It's also created in exactly the same way as the other four (with the process above)
+	-> Then instead of having to run those four .sh files separately, you can just run the one .sh file which runs the four of them 
+	-> That .sh file is the `five.sh` file -> so to run it, it's `./five.sh`
+
+TO PRINT THE TYPE OF A COMMAND:
+	-> type echo <- This is, for example a shell bulletin 
+	-> We are turning the type in the terminal that the print (echo) statement is 
+	-> It's also a Bash terminal 
+	-> Another example of a shell bulletin is `read` <- this is the command that takes an input from the user and sets it equal to a variable 
+	-> if <- This is a shell keyword 
+		-> The same as `then`
+	-> The type of Bash (`type bash`) is /usr/bin/bash 
+		-> It's a directory / relative path to where the Bash interpreter on the IDE is stored 
+	-> An error message you can get is .... Not found <- If you're asking it for the type of a command which isn't there
