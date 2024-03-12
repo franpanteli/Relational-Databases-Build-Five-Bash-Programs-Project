@@ -339,21 +339,67 @@ An example of this:
 	-> Id this condition, then print this 
 	-> If this condition isn't met, and this one is met instead, then print (echo) this 
 
+From the fourth project, `fortune.sh`
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+This follows the same process as with the previous projects:
+	-> You create the sh file for the program using the touch filename.sh command 
+	-> Then you add in file permissions, so that code is executable 
+		-> In this case `chmod +x fortune.sh`
+	-> Then you add in a shebang line at the top of that file -> `#!/bin/bash`
+		-> So that it knows the file should be interpreted with / as Bash 
+	-> They also like to add 'titles' into the programs -> echo -e "\n~~ Bingo Number Generator ~~\n", in this example 
+		-> So when the program runs a new line is printed in the terminal with the name of the program which is being run
 
+To run the sh file in the terminal:
+	-> We have a .sh file <- This contains the Bash script for the program - which is a series of Bash commands 
+	-> Then to run this in the terminal, it's ./file_name.sh (for example)
 
+ARRAYS:
+	TO DEFINE ARRAYS:
+		-> ARR=("a" "b" "c") <- An example of how to create an array 
+			-> In this case it's been done in the terminal, and not in a separate.sh file 
+			-> The array is equal to a variable 
 
+	TO RETURN VALUES FROM ARRAYS:
+		-> Bash arrays are zero indexed, it's like Python a bit (object oriented approach)
+		-> echo ${ARR[1]} <- To print the value of the second element in the array 
+		-> echo ${ARR[@]} <- To print the value of the entire array 
+		-> ARR is the name of the variable which stores the array in this example 
+		-> You can also use the declare command to print the indices of the different values in the array, and their contents -> `declare -p ARR`
+			-> With ARR being the name of the array which stores those values 
+			-> When you use this, you need to make sure you get the name of the array right, and the index whose element you are targeting 
 
+RECAP ON RANDOM NUMBERS:
+	-> N=$(( RANDOM % 6 )) <- This is another example of a random number being added into a script 
+		-> This is between 1 and 5 (this is zero indexed, notes were made on this above)
+		-> We are storing this in a variable, whose value (`$`) is equal to this expression 
+	-> echo ${RESPONSES[$N]} 
+		-> We are generating a random number between 0 and the length of an array
+		-> Then we are printing out the element of the array whose index is that random number 
+		-> In other words, generating a random number which we use as the index of the element in the array which we want to return 
+		-> So we first generate a random number which is the index of the element in the array we want 
+		-> And then the extract the element in the array with that index, and print it out 
 
+BASH FUNCTIONS:
+	-> You can see the help available with this if you use the `help function` command in the terminal 
+	-> Example function (in a .sh file):
+	
+		GET_FORTUNE() {
+		  echo Ask a yes or no question:
+		}
+		GET_FORTUNE
 
+	-> To call the function, you run its name under where its been defined -> and you don't need brackets to do this 
+	-> This is the syntax for a Bash function 
+	-> It's more than one line, which is why you would put it into a .sh file -> and then run that entire .sh file 
+	-> To test the function, you run the script which contains it -> in this case it's ./fortune.sh 
 
+INPUT:
+	-> You can define a function which takes input, if you (for example) 
+		read QUESTION 
+		-> Now the function is going to ask the user for an input, and store the value of that in a variable 
 
-
-
-
-
-I think the generator is done 😄 The next project is a fortune teller. Use the touch command to create fortune.sh in the same folder as the other scripts.
-
-1. Type touch fortune.sh in the terminal and press enter
-
-2. Make sure you are in the project folder first
+UNTIL:
+	-> 
