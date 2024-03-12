@@ -79,6 +79,12 @@ The process:
 
 COMMENTS:
 	-> # Comments in Bash look like comments in Python  
+	-> Comments which span multiple lines:
+
+: '
+  comment here
+  more comment here
+'
 
 TO PRINT OUT THE VALUES OF VARIABLES IN BASH PROGRAMS:
 	-> By 'Bash program' <- This means a series of Bash commands in a project .sh file 
@@ -217,6 +223,121 @@ TO PAUSE THE EXECUTION OF A FILE:
 	-> You can also look up the documentation for commands using (for instance man sleep)
 	-> For example, when we are executing a for loop -> you can make the code stop for 1 second before moving onto the next iteration of the loop
 
+WHILE LOOPS:
+
+	while [[ CONDITION ]]
+	do
+	  STATEMENTS
+	done
+
+	-> The statements can be echo commands
+	-> The condition can also be a boolean statement   
+	-> You can add in a variable (for example I=$1) <- I is the first argument into the function  
+	-> And then in the do statement I-- <- take away 1 from I, for as long as this condition is true and for each iteration  
+	-> You can also add sleep 1 <- wait this amount of seconds before moving onto the next iteration in the loop 
+
+From the third project, `bingo.sh`
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+-> You create the shell file with the terminal (`touch example.sh`)
+-> Then you add permissions so you can execute (`x`) the code -> chmod +x example.sh
+-> Then you add a shebang to the top of that file (#!/bin/bash)
+-> That tells the computer what to use to render the program 
+-> Another common thing done in each of these projects is echo -e "\n<message>\n"
+	-> To add in a new line which runs at the start of the program to indicate its name
+	-> For exmaple echo -e "\n~~ Bingo Number Generator ~~\n"
+
+TO VIEW ENVIRONMENT VARIABLES:
+	-> printenv <- In the terminal 
+	-> This returns the values of the environment variables 
+	-> You can, for example echo $LANG <- In the main terminal, so that we can see the value of a certain environment variable (rather than all of them)
+	-> declare -p <- To view all variables in the shell (the -p option is for print)
+		-> You are doing this in the terminal (not when you edit the shell file)
+		-> You can set variables in the terminal which are defined outside of the shell file 
+		-> And then use this to print the value of those variables, for this instance of the terminal  
+
+TO RETURN A RANDOM NUMBER IN THE TERMINAL:
+	-> echo $RANDOM <- echo (print into the terminal), the value ($) of a random number 
+		-> Again this is in the terminal (not in the text editor for the sh file)
+	-> In the text editor for the shell file, you can then set a variable you are working with equal to the value of a random number (for example NUMBER=$RANDOM)
+		-> Set the value of the NUMBER variable equal to a random number 
+		-> NUMBER=$RANDOM%75 <- Another example of this, to make it generate a random number between 1 and 75 
+	-> echo $(( RANDOM % 75 )) <- This is an example, entered into the terminal -> of how to print a random number between 0 and 74
+		-> Bash is zero indexed like Python 
+		-> So if you want the number to be between 1 and 75, you do echo $(( RANDOM % 75 + 1 ))
+			-> `echo $` <- 'Print the value of' this expression 
+
+INCREASING THE VALUES OF VARIABLES:
+	-> (( I++ )) <- To increase the value of the variable I by a value of 1 in the terminal (outside of the definition of the shell file in the text editor)
+	-> (( I += 10 )) <- I is the same value as it was previously, but with 10 added onto it 
+	-> You can also return for example $(( I + 4 )) <- This doesn't actually increase the value of the variable -> it just adds 4 to it and prints out the result 
+		-> Compared to increasing the value of that variable by 4 (which would be setting it equal to itself, plus four - as opposed to printing out the value of it plus four)
+		-> In this example this line of code had to be entered twice into the terminal to work (the fist time returned a 'command not found' message, but it worked the second time 
+
+DEFINING VARIABLES:
+	-> You can define variables in the terminal as a function of other variables, for example J=$(( I - 6 ))
+	-> J is the value of the variable I, -6 
+	-> You don't have to do this in the shell file which defines the program, you can do this in an instance of the terminal -> both of them are (in this case) running Bash 
+		-> You can either put these commands into the terminal, or a .sh file -> they are running the same language -> because we have told the computer to interpret the commands using Bash in the shebang line at the top of that file 
+	-> NUMBER=$(( RANDOM % 75 + 1 )) <- This is an example of a variable which has been defined in the terminal (not in a .sh script), which is equal to the value of a random number between 1 and 75 
+		-> Since Bash is zero indexed, we are adding 1 to the expression 
+		-> They also place importance on printing the value of this expression multiple times, to test that it's printing out different values (assuming that these are random)	- so we know its value isn't fixed 
+
+RETURNING THE VALUES OF VARIABLES: 
+	-> Then to return the value of that variable, echo $J 
+	-> echo $(( J * 5 + 25 )) <- You can print the value of some variable in an expression 
+	-> This is being done in the terminal 
+	-> If you did a calculation (for example J * 5 + 25) but you didn't use $, then it would just run the calculation and wouldn't output anything 
+		-> Then if you did the same thing and used $(( J * 5 + 25 )), then it replaces the calculation with the result of it
+		-> Running the calculation, vs saying -> this variable equals some function of its previous value 
+
+USING DECLARE TO PRINT THE VALUES OF VARIABLES IN THE TERMINAL:
+	-> You can use this to create variables 
+	-> There is more on this above
+	-> declare -p J <- To print the value of a single variable 
+		-> We are printing (-p) the value of the variable J 
+		-> This is in the terminal, outside of the shell file -> the value of the variable J was set in the terminal 
+		-> Rather than printing out the values of all of the variables we have in the terminal 
+		-> Printing out the value of one of them 
+
+OTHER POINTS:
+	-> An sh file is a program - it's like a calculator 
+
+IF STATEMENT:
+	-> This is another example of the general syntax of an if statement 
+	-> We have the condition 
+	-> And then the statement which is executed if this is true (print this into the terminal)
+
+	if (( NUMBER <= 15 ))
+	then
+	  echo $TEXT B:$NUMBER
+	fi
+
+ELSE IF STATEMENTS:
+	-> The syntax for Bash else if statements:
+
+	if (( CONDITION ))
+	then
+	  STATEMENTS
+	elif [[ CONDITION ]]
+	then
+	  STATEMENTS
+	fi
+
+	-> The second condition uses [[]]'s, rather than (())'s here 
+
+An example of this:
+	if (( NUMBER <= 15 ))
+	then
+	  echo $TEXT B:$NUMBER
+	elif [[ $NUMBER -le 30 ]]
+	then
+	  echo $TEXT I:$NUMBER
+	fi
+	
+	-> Id this condition, then print this 
+	-> If this condition isn't met, and this one is met instead, then print (echo) this 
 
 
 
@@ -228,3 +349,11 @@ TO PAUSE THE EXECUTION OF A FILE:
 
 
 
+
+
+
+I think the generator is done 😄 The next project is a fortune teller. Use the touch command to create fortune.sh in the same folder as the other scripts.
+
+1. Type touch fortune.sh in the terminal and press enter
+
+2. Make sure you are in the project folder first
