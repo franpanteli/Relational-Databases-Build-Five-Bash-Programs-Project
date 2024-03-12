@@ -12,8 +12,6 @@ For this, I had to produce five Bash programs in various `.sh` files. My notes o
 More information about each of these projects is found in the [Bash notes I created when writing them](https://github.com/franpanteli/Relational-Databases-Build-Five-Bash-Programs-Project/blob/main/2%20relational-databases-build-five-bash-programs-project-guided-course-notes.txt). These notes are in depth and are organised according to the chronological convetion listed above. The final shell file I produced as part of this project was [`five.sh`](https://github.com/franpanteli/Relational-Databases-Build-Five-Bash-Programs-Project/blob/main/five.sh). This is a single shell file which when executed runs all of these prgograms in conjunction. More information about this is in my [project Bash notes](https://github.com/franpanteli/Relational-Databases-Build-Five-Bash-Programs-Project/blob/main/2%20relational-databases-build-five-bash-programs-project-guided-course-notes.txt). 
 
 ## To Clone This Repository
-This can be run by cloning this repository:
-
 ```
 git clone https://github.com/franpanteli/Relational-Databases-Build-Five-Bash-Programs-Project.git
 ```
